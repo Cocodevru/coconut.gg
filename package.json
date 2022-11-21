@@ -1,0 +1,14 @@
+{
+  "name": "Coconut.gg",
+  "version": "1.0.0",
+  "description": "Сайт-визитка",
+  "main": "script.js",
+  "scripts": {
+    "start": "sass --watch sass/styles.scss style.css"
+  },
+  "author": "Coconut",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.56.1"
+  }
+}
