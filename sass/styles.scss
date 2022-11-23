@@ -4,7 +4,7 @@
   margin: 0;
 }
 // Шрифт
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 
 // Базовые миксины
 
@@ -28,7 +28,7 @@
 }
 
 // Фон сайта
-@mixin background {
+/*@mixin background {
   background-image: url("images/backgrounds/bg3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -41,7 +41,7 @@
     bottom: 0;
     background: rgba(0, 0, 0, .3);
   }
-}
+}*/
 
 // Градиент для текста
 @mixin textGradient {
@@ -87,7 +87,7 @@ html, body {
         position: absolute;
         width: calc(100% - 2rem);
         @media screen and (max-width: 500px) {
-          display: none;
+        display: none;
         }
       }
       a {
@@ -112,39 +112,42 @@ html, body {
   
   // Главная часть
   .main {
-    @include background;
+    background-color: white;
     @include center;
     height: 100%;
     padding-top: 3rem;
     &__items {
       z-index: 1;
-      color: white;
       text-align: center;
     }
     &__container {
       @include center;
       flex-wrap: wrap;
-      line-height: 2;
+      line-height: 1.5;
       margin: 0 1rem;
       &:first-child {
         flex-direction: column;
       }
-      h1 {
-        font-size: 3rem;
+      &:nth-child(2) {
+        margin: 1rem 0;
       }
       p {
         font-size: 1.5rem;
-        &:first-child {
-          @include textGradient;
-        }
         @media screen and (max-width: 375px) {
           font-size: 1.25rem;
+        }
+        span {
+          @include textGradient;
         }
       }
     }
     &__icon {
       @include center;
-      filter: invert(1);
+      a {
+        img {
+          width: 5rem;
+        }
+      }
       &:hover {
         transform: scale(1.1);
       }
