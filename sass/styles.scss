@@ -29,9 +29,18 @@
 
 // Фон сайта
 @mixin background {
-  background-image: url("images/backgrounds/bg.gif");
+  background-image: url("images/backgrounds/bg3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .3);
+  }
 }
 
 // Градиент для текста
@@ -45,19 +54,22 @@ html, body {
   overflow-x: hidden;
   height: 100%;
   width: 100%;
+  user-select: none;
   font-family: "Roboto", sans-serif;
 }
 
 .wrapper {
-  @include background;
   height: 100%;
-
+  z-index: 2;
   // Навигация
   .nav {
     @include center;
     justify-content: flex-start;
     background-color: #151515;
+    position: fixed;
+    width: 100vw;
     height: 3rem;
+    z-index: 3;
     &__container {
       @include center-y;
       margin: 0 1rem;
@@ -68,11 +80,15 @@ html, body {
       }
       p {
         color: pink;
+        font-size: 1.025rem;
       }
       &:nth-child(2) {
         @include center;
         position: absolute;
-        width: 100%;
+        width: calc(100% - 2rem);
+        @media screen and (max-width: 500px) {
+          display: none;
+        }
       }
       a {
         text-decoration: none;
@@ -96,25 +112,41 @@ html, body {
   
   // Главная часть
   .main {
+    @include background;
+    @include center;
+    height: 100%;
+    padding-top: 3rem;
+    &__items {
+      z-index: 1;
+      color: white;
+      text-align: center;
+    }
     &__container {
+      @include center;
+      flex-wrap: wrap;
+      line-height: 2;
+      margin: 0 1rem;
+      &:first-child {
+        flex-direction: column;
+      }
+      h1 {
+        font-size: 3rem;
+      }
       p {
-        color: white;
-        font-size: 1.1rem;
+        font-size: 1.5rem;
         &:first-child {
           @include textGradient;
         }
-      }
-      &:nth-child(2) {
-        @include center;
+        @media screen and (max-width: 375px) {
+          font-size: 1.25rem;
+        }
       }
     }
     &__icon {
       @include center;
       filter: invert(1);
       &:hover {
-        background-color: white;
-        color: black;
-        border: 3px solid white;
+        transform: scale(1.1);
       }
     }
   }

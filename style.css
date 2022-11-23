@@ -9,14 +9,13 @@ html, body {
   overflow-x: hidden;
   height: 100%;
   width: 100%;
+  user-select: none;
   font-family: "Roboto", sans-serif;
 }
 
 .wrapper {
-  background-image: url("images/backgrounds/bg.gif");
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 100%;
+  z-index: 2;
 }
 .wrapper .nav {
   display: flex;
@@ -24,7 +23,10 @@ html, body {
   justify-content: center;
   justify-content: flex-start;
   background-color: #151515;
+  position: fixed;
+  width: 100vw;
   height: 3rem;
+  z-index: 3;
 }
 .wrapper .nav__container {
   display: flex;
@@ -38,13 +40,19 @@ html, body {
 }
 .wrapper .nav__container p {
   color: pink;
+  font-size: 1.025rem;
 }
 .wrapper .nav__container:nth-child(2) {
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  width: 100%;
+  width: calc(100% - 2rem);
+}
+@media screen and (max-width: 500px) {
+  .wrapper .nav__container:nth-child(2) {
+    display: none;
+  }
 }
 .wrapper .nav__container a {
   text-decoration: none;
@@ -63,19 +71,56 @@ html, body {
 .wrapper .nav__container a button:hover {
   background-color: pink;
 }
-.wrapper .main__container p {
+.wrapper .main {
+  background-image: url("images/backgrounds/bg3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding-top: 3rem;
+}
+.wrapper .main:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.wrapper .main__items {
+  z-index: 1;
   color: white;
-  font-size: 1.1rem;
+  text-align: center;
+}
+.wrapper .main__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  line-height: 2;
+  margin: 0 1rem;
+}
+.wrapper .main__container:first-child {
+  flex-direction: column;
+}
+.wrapper .main__container h1 {
+  font-size: 3rem;
+}
+.wrapper .main__container p {
+  font-size: 1.5rem;
 }
 .wrapper .main__container p:first-child {
   background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.wrapper .main__container:nth-child(2) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media screen and (max-width: 375px) {
+  .wrapper .main__container p {
+    font-size: 1.25rem;
+  }
 }
 .wrapper .main__icon {
   display: flex;
@@ -84,9 +129,7 @@ html, body {
   filter: invert(1);
 }
 .wrapper .main__icon:hover {
-  background-color: white;
-  color: black;
-  border: 3px solid white;
+  transform: scale(1.1);
 }
 
 /*# sourceMappingURL=style.css.map */
