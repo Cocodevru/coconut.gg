@@ -34,7 +34,6 @@ html, body {
 .wrapper .nav {
   display: flex;
   align-items: center;
-  justify-content: center;
   justify-content: flex-start;
   background-color: #151515;
   position: fixed;
@@ -94,8 +93,21 @@ html, body {
   padding-top: 3rem;
 }
 .wrapper .main__items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1;
+  height: 100%;
+  width: 100%;
   text-align: center;
+  flex-direction: column;
+}
+.wrapper .main__line {
+  /*background-image: url(images/lines/line.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40vh;
+  width: 100%;*/
 }
 .wrapper .main__container {
   display: flex;
@@ -110,16 +122,21 @@ html, body {
 }
 .wrapper .main__container:nth-child(2) {
   margin: 1rem 0;
+  flex-direction: column;
 }
-.wrapper .main__container p {
-  font-size: 1.5rem;
+.wrapper .main__container:nth-child(2) span {
+  font-size: 1.25rem;
+  margin: 1rem 0;
+}
+.wrapper .main__container p, .wrapper .main__container p span {
+  font-size: 1.5rem !important;
 }
 @media screen and (max-width: 375px) {
   .wrapper .main__container p {
     font-size: 1.25rem;
   }
 }
-.wrapper .main__container p span {
+.wrapper .main__container span {
   background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

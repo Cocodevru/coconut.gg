@@ -63,7 +63,7 @@ html, body {
   z-index: 2;
   // Навигация
   .nav {
-    @include center;
+    @include center-y;
     justify-content: flex-start;
     background-color: #151515;
     position: fixed;
@@ -117,9 +117,22 @@ html, body {
     height: 100%;
     padding-top: 3rem;
     &__items {
+      @include center;
       z-index: 1;
+      height: 100%;
+      width: 100%;
       text-align: center;
+      flex-direction: column;
     }
+    // Линии
+    &__line {
+      /*background-image: url(images/lines/line.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 40vh;
+      width: 100%;*/
+    }
+    // Основная часть блока
     &__container {
       @include center;
       flex-wrap: wrap;
@@ -130,15 +143,22 @@ html, body {
       }
       &:nth-child(2) {
         margin: 1rem 0;
+        flex-direction: column;
+        span {
+          font-size: 1.25rem;
+          margin: 1rem 0;
+        }
       }
       p {
-        font-size: 1.5rem;
+        &, span {
+          font-size: 1.5rem !important;
+        }
         @media screen and (max-width: 375px) {
           font-size: 1.25rem;
         }
-        span {
-          @include textGradient;
-        }
+      }
+      span {
+        @include textGradient;
       }
     }
     &__icon {
