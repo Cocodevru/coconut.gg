@@ -1,4 +1,4 @@
- * {
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -28,20 +28,11 @@
 }
 
 // Фон сайта
-/*@mixin background {
-  background-image: url("images/backgrounds/bg3.jpg");
+@mixin background {
+  background-image: url("images/backgrounds/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, .3);
-  }
-}*/
+}
 
 // Градиент для текста
 @mixin textGradient {
@@ -49,6 +40,8 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+$gradient: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
 
 html, body {
   overflow-x: hidden;
@@ -87,7 +80,7 @@ html, body {
         position: absolute;
         width: calc(100% - 2rem);
         @media screen and (max-width: 500px) {
-        display: none;
+          display: none;
         }
       }
       a {
@@ -112,7 +105,7 @@ html, body {
   
   // Главная часть
   .main {
-    background-color: white;
+    @include background;
     @include center;
     height: 100%;
     padding-top: 3rem;
@@ -124,14 +117,7 @@ html, body {
       text-align: center;
       flex-direction: column;
     }
-    // Линии
-    &__line {
-      /*background-image: url(images/lines/line.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 40vh;
-      width: 100%;*/
-    }
+    
     // Основная часть блока
     &__container {
       @include center;
@@ -143,27 +129,68 @@ html, body {
       }
       &:nth-child(2) {
         margin: 1rem 0;
-        flex-direction: column;
         span {
           font-size: 1.25rem;
           margin: 1rem 0;
         }
       }
       p {
+        line-height: 1.5;
         &, span {
-          font-size: 1.5rem !important;
+          font-size: 1.75rem;
         }
-        @media screen and (max-width: 375px) {
-          font-size: 1.25rem;
+        &:nth-child(2), &:nth-child(3) {
+          font-size: 1.3rem;
+        }
+        &:nth-child(2) {
+          color: #969696;
+        }
+        &:nth-child(3) {
+          margin: 1rem 0;
         }
       }
       span {
         @include textGradient;
       }
+      a {
+        text-decoration: none;
+        border-radius: 20px;
+        position: relative;
+        background-color: white;
+        padding: 0 1rem;
+        margin: 1rem;
+        display: block;
+        color: black;
+        &:before {
+          content: "";
+          position: absolute;
+          top: -2px;
+          bottom: -2px;
+          left: -2px;
+          right: -2px;
+          background: $gradient;
+          border-radius: 20px;
+          z-index: -1;
+        }
+        p {
+          font-size: 1.25rem;
+          margin: .25rem 0 0;
+        }
+        img {
+          width: 50px;
+        }
+      }
     }
     &__icon {
       @include center;
       a {
+        background: transparent;
+        border: none;
+        padding: 0;
+        margin: 0;
+        &:before {
+          background: transparent;
+        }
         img {
           width: 5rem;
         }
