@@ -118,7 +118,8 @@ html, body {
   font-size: 1.3rem;
 }
 .wrapper .main__container p:nth-child(2) {
-  color: #969696;
+  color: #989898;
+  margin: 0.5rem 1rem;
 }
 .wrapper .main__container p:nth-child(3) {
   margin: 1rem 0;
