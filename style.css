@@ -87,7 +87,7 @@ h2 {
   color: pink;
 }
 .wrapper .main {
-  background-image: url("images/backgrounds/bg.png");
+  background-image: url("images/backgrounds/svg2.svg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -178,7 +178,7 @@ h2 {
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: 1rem 0 3rem;
+  margin: 3rem 0;
 }
 .wrapper .about__items {
   max-width: 1200px;
@@ -204,7 +204,7 @@ h2 {
   flex-direction: column;
 }
 .wrapper .contacts {
-  background-image: url("images/backgrounds/footer.png");
+  background-image: url("images/backgrounds/svg.svg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -212,26 +212,34 @@ h2 {
   justify-content: center;
   flex-direction: column;
   margin-top: 1rem;
-  padding: 5rem 0;
   width: 100%;
+  height: 50%;
+}
+@media screen and (max-width: 375px) {
+  .wrapper .contacts {
+    height: 100%;
+  }
 }
 .wrapper .contacts__items {
+  border: solid 3px #151515;
   background-color: white;
   border-radius: 20px;
   display: flex;
+}
+@media screen and (max-width: 375px) {
+  .wrapper .contacts__items {
+    flex-direction: column;
+  }
 }
 .wrapper .contacts__container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  width: 170px;
+  width: 200px;
 }
 .wrapper .contacts__container:first-child {
-  background-color: white;
-  border-radius: 20px;
   flex-direction: column;
-  padding: 1.5rem 0;
 }
 .wrapper .contacts__container:first-child p {
   background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
@@ -239,19 +247,21 @@ h2 {
   -webkit-text-fill-color: transparent;
   font-size: 1.3rem;
 }
+@media screen and (max-width: 375px) {
+  .wrapper .contacts__container:first-child {
+    margin: 1rem 0;
+  }
+}
 .wrapper .contacts__icon {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .wrapper .contacts__icon a {
-  background-color: white;
-  border-radius: 20px;
-  border: none;
-  margin: 0.75rem 0.5rem;
+  margin: 0.5rem auto 0.5rem 0;
 }
 .wrapper .contacts__icon a img {
-  width: 4rem;
+  width: 5rem;
 }
 .wrapper .contacts__icon:hover {
   transform: scale(1.1);
