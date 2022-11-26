@@ -34,6 +34,13 @@
   background-size: cover;
 }
 
+// Фон для Footer
+@mixin footer {
+  background-image: url("images/backgrounds/footer.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 // Градиент для текста
 @mixin textGradient {
   background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
@@ -48,7 +55,17 @@ html, body {
   height: 100%;
   width: 100%;
   user-select: none;
+  scroll-behavior: smooth;
   font-family: "Roboto", sans-serif;
+}
+h2 {
+  @include textGradient;
+  text-align: center;
+  margin: 1rem;
+  font: {
+    size: 1.5rem;
+    weight: 400;
+  }
 }
 
 .wrapper {
@@ -69,11 +86,16 @@ html, body {
       img {
         width: 3rem;
         padding: .25rem;
-        margin-right: .5rem;
+        margin-right: .25rem;
       }
       p {
         color: pink;
         font-size: 1.025rem;
+      }
+      &:first-child {
+        cursor: pointer;
+        display: flex;
+        z-index: 1;
       }
       &:nth-child(2) {
         @include center;
@@ -96,7 +118,7 @@ html, body {
           height: 3rem;
           width: 6rem;
           &:hover {
-            background-color: pink;
+            color: pink;
           }
         }
       }
@@ -107,8 +129,8 @@ html, body {
   .main {
     @include background;
     @include center;
-    height: 100%;
-    padding-top: 3rem;
+    height: calc(100% + 50px);
+    border-bottom: solid 50px #151515;
     &__items {
       @include center;
       z-index: 1;
@@ -182,23 +204,80 @@ html, body {
         }
       }
     }
-    &__icon {
-      @include center;
-      a {
-        background: transparent;
-        border: none;
-        padding: 0;
-        margin: 0;
-        &:before {
-          background: transparent;
-        }
-        img {
-          width: 5rem;
-        }
-      }
-      &:hover {
-        transform: scale(1.1);
+  }
+
+  // Обо мне
+  .about {
+    @include center;
+    width: 100%;
+    margin: 1rem 0 3rem;
+    &__items {
+      max-width: 1200px;
+      p {
+        text-align: justify;
+        margin: 0 1rem;
       }
     }
   }
-}
+
+  // Навыки
+  .skills {
+    @include center;
+    flex-direction: column;
+    margin: 1rem 0 3rem;
+    &__items {
+      &, div {
+        @include center;
+        flex-wrap: wrap;
+      }
+      div {
+        flex-direction: column;
+      }
+    }
+  }
+  
+  // Контакты
+  .contacts {
+    @include footer;
+    @include center;
+    flex-direction: column;
+    margin-top: 1rem;
+    padding: 5rem 0;
+    width: 100%;
+    &__items {
+      background-color: white;
+      border-radius: 20px;
+      display: flex;
+    }
+    &__container {
+      @include center;
+      flex-wrap: wrap;
+      width: 170px;
+      &:first-child {
+        background-color: white;
+        border-radius: 20px;
+        flex-direction: column;
+        padding: 1.5rem 0;
+        p {
+          @include textGradient;
+          font-size: 1.3rem;
+        }
+      }
+    }
+    &__icon {
+      @include center;
+      a {
+          background-color: white;
+          border-radius: 20px;
+          border: none;
+          margin: .75rem .5rem;
+          img {
+            width: 4rem;
+          }
+        }
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }

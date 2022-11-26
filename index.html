@@ -7,13 +7,15 @@
   <title>Сoconutf.tk</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link rel="icon" href="./images/logos/icon.png" />
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
-  
-<body>    
+
+<body>
   <div class="wrapper">
     <div class="nav">
-      <div class="nav__container">
-        <img src="images/logos/icon.png">
+      <div class="nav__container" id="up">
+        <img src="images/logos/icon.png" alt>
         <p>Coconutf</p>
       </div>
       <div class="nav__container">
@@ -25,53 +27,81 @@
         </a>
       </div>
     </div>
-    <div class="main">
+    <div class="main" id="main">
       <div class="main__items">
         <div class="main__container">
           <p>Привет, меня зовут <span>Coconutf</span>.<br /> Я веб-разработчик.</p>
-          <p>А также frontend-разработчик, веб-дизайнер и javascript-программист.</p>  
-          <a href="#">
+          <p>А также frontend-разработчик, веб-дизайнер и javascript-программист.</p>
+          <a href="#about">
             <p>Обо мне</p>
             <img src="images/arrow.png" alt>
           </a>
         </div>
-        <!-- Временно -->
-        <!--<div class="main__container">
-          <div class="main__icon">
-            <a href="https://discord.gg/Bx6z7D6nR9">
-              <img src="./images/icons/ds.png" alt>
-            </a>
-          </div>
-          <div class="main__icon">
-            <a href="https://t.me/coconutf_tk">
-              <img src="./images/icons/tg.png" alt>
-            </a>
-          </div>
-          <div class="main__icon">
-            <a href="https://vk.com/coconutf">
-              <img src="./images/icons/vk.png" alt>
-            </a>
-          </div>
-          <div class="main__icon">
-            <a href="https://steamcommunity.com/profiles/76561199082457936/">
-              <img src="./images/icons/st.png" alt>
-            </a>
-          </div>
-          <div class="main__icon">
-            <a href="https://instagram.com/coconutf.tk?igshid=MWI4MTlyMDE=">
-              <img src="./images/icons/inst.png" alt>
-            </a>
-          </div>
-        </div>-->
       </div>
     </div>
-    <!--<div class="about">
-      <p>Обо мне</p>
-      <p>Я занимаюсь веб-разработкой более 5 месяцев.<br>
-        Знаю такие технологии, как: HTML, CSS, SASS(SCSS) и язык программирования JavaScript</p>
-    </div>-->
+    <div class="about" id="about">
+      <div class="about__items">
+        <h2>Обо мне</h2>
+        <p>Занимаюсь веб-разработкой более 5 месяцев. Начинающий программист. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+    <div class="skills">
+      <h2>Мои навыки</h2>
+      <div class="skills__items">
+        <div>
+          <img src="./images/icons/html.png">
+          <p>HTML</p>
+        </div>
+        <div>
+          <img src="./images/icons/css.png">
+          <p>CSS</p>
+        </div>
+        <div>
+          <img src="./images/icons/sass.png">
+          <p>Sass/Scss</p>
+        </div>
+        <div>
+          <img src="./images/icons/javas.png">
+          <p>JavaScript</p>
+        </div>
+      </div>
+    </div>
+    <div class="contacts" id="contacts">
+      <div class="contacts__items">
+        <div class="contacts__container">
+        <img src="./images/logos/icon.png" width="110px">
+        <p>Coconutf</p>
+      </div>
+        <div class="contacts__container">
+        <div class="contacts__icon">
+          <a href="https://discord.gg/Bx6z7D6nR9">
+            <img src="./images/icons/ds.png" alt>
+          </a>
+        </div>
+        <div class="contacts__icon">
+          <a href="https://t.me/coconutf_tk">
+            <img src="./images/icons/tg.png" alt>
+          </a>
+        </div>
+        <div class="contacts__icon">
+          <a href="https://vk.com/coconutf">
+            <img src="./images/icons/vk.png" alt>
+          </a>
+        </div>
+        <div class="contacts__icon">
+          <a href="https://steamcommunity.com/profiles/76561199082457936/">
+            <img src="./images/icons/st.png" alt>
+          </a>
+        </div>
+      </div>
+      </div>
+    </div>
   </div>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>
