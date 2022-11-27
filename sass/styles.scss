@@ -70,6 +70,39 @@ h2 {
   }
 }
 
+// Загрузка
+.preloader {
+  @include center;
+  position: fixed;
+  background-color: pink;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  z-index: 999;
+  &__item {
+    img {
+      height: 200px;
+    }
+    p {
+      text-align: center;
+      font-size: 1.5rem;
+      margin: 1rem;
+      color: white;
+    }
+  }
+}
+.loaded {
+  & .preloader {
+    display: none;
+    overflow-y: scroll;
+  }
+  &__hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+  }
+}
+
+// Сайт
 .wrapper {
   height: 100%;
   z-index: 2;

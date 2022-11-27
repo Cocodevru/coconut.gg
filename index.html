@@ -12,6 +12,12 @@
 </head>
 
 <body>
+  <div class="preloader">
+    <div class="preloader__item">
+      <img src="images/logos/icon.png" alt />
+      <p>Загрузка...</p>
+    </div>
+  </div>
   <div class="wrapper">
     <div class="nav">
       <div class="nav__container" id="up">
@@ -66,11 +72,8 @@
     <div class="about" id="about">
       <div class="about__items">
         <h2>Обо мне</h2>
-        <p>Занимаюсь веб-разработкой более 5 месяцев. Начинающий программист. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Я начинающий программист, строю свою карьеру на том что мне действительно нравится. В течение 5 месяцев оттачиваю свои навыки веб-разработчика. Всегда открыт к получению новых знаний и общению. Так как я начинающий программист, то пока ещё у меня нет обширного портфолио работ. Разрабатываю веб-сайты любой сложности. Вы можете заказать у меня сайт любого масштаба. К работе подхожу ответственно, заказы выполняю быстро и качественно. Я помогаю воплощать Ваши идеи и дизайны в веб-жизнь.
+          </p>
       </div>
     </div>
     <div class="skills" id="skills">
@@ -101,7 +104,7 @@
     <div class="role" id="role">
       <div class="role__items">
         <h2>Роль</h2>
-        <p>Работаю frontend-разработчиком в студии Wyte на Discord-сервере. В работе использую онлайн-редактор Replit, систему управлений версиями Git и все технологии для разработки качественных красивых сайтов. Разрабатываю веб-сайты любой сложности. Работаю совместно с командой разработчиков. Всегда открыт к получению новых знаний и общению. Так как я начинающий программист, то у меня нет такого портфолио работ. Вы можете заказать у меня сайт любого масштаба, всегда выполняю свою работу быстро и качественно. Также могу использовать в разработке техническую документацию.</p>
+        <p>Работаю frontend-разработчиком в студии Wyte на Discord-сервере. В работе использую онлайн-редактор Replit, систему управлений версиями Git и все технологии для разработки качественных красивых сайтов. Также могу использовать в разработке техническую документацию. Работаю совместно с командой разработчиков. На Discord-сервере мы создаём совместные проекты, помогаем друг другу, делаем красивые и удобные сайты, и много другое. С нами удобно работать и нам важно, чтобы клиент остался доволен.</p>
       </div>
     </div>
     <div class="contacts" id="contacts">
@@ -140,6 +143,15 @@
     </div>
   </div>
   <script src="script.js" defer></script>
+  <script>
+    window.onload = () => {
+      document.body.classList.add("loaded__hiding");
+      window.setTimeout(() => {
+        document.body.classList.add("loaded");
+        document.body.classList.remove("loaded__hiding");
+      }, 500);
+    }
+  </script>
 </body>
 
 </html>
