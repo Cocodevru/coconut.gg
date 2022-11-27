@@ -76,7 +76,7 @@ h2 {
   // Навигация
   .nav {
     @include center-y;
-    justify-content: flex-start;
+    justify-content: space-between;
     background-color: #151515;
     position: fixed;
     width: 100vw;
@@ -103,8 +103,18 @@ h2 {
         @include center;
         position: absolute;
         width: calc(100% - 2rem);
-        @media screen and (max-width: 500px) {
+        @media screen and (max-width: 768px) {
           display: none;
+        }
+      }
+      &:nth-child(3) {
+        display: none;
+        font-size: 2rem;
+        height: 3rem;
+        color: white;
+        z-index: 2;
+        @media screen and (max-width: 768px) {
+          display: flex;
         }
       }
       a {
@@ -123,6 +133,37 @@ h2 {
             color: pink;
           }
         }
+      }
+    }
+  }
+
+  // Меню
+  .menu {
+    @include center;
+    flex-direction: column;
+    background-color: pink;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    &__close {
+      color: white;
+      font-size: 2rem;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 1rem;
+    }
+    ul {
+      list-style: none;
+      width: 100%;
+      a {
+        @include center;
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: white;
+        width: calc(100% - 2rem);
+        margin: 1rem;
       }
     }
   }

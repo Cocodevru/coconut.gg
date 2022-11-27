@@ -31,7 +31,7 @@ h2 {
 .wrapper .nav {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   background-color: #151515;
   position: fixed;
   width: 100vw;
@@ -64,9 +64,21 @@ h2 {
   position: absolute;
   width: calc(100% - 2rem);
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
   .wrapper .nav__container:nth-child(2) {
     display: none;
+  }
+}
+.wrapper .nav__container:nth-child(3) {
+  display: none;
+  font-size: 2rem;
+  height: 3rem;
+  color: white;
+  z-index: 2;
+}
+@media screen and (max-width: 768px) {
+  .wrapper .nav__container:nth-child(3) {
+    display: flex;
   }
 }
 .wrapper .nav__container a {
@@ -85,6 +97,39 @@ h2 {
 }
 .wrapper .nav__container a button:hover {
   color: pink;
+}
+.wrapper .menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: pink;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+}
+.wrapper .menu__close {
+  color: white;
+  font-size: 2rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 1rem;
+}
+.wrapper .menu ul {
+  list-style: none;
+  width: 100%;
+}
+.wrapper .menu ul a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+  width: calc(100% - 2rem);
+  margin: 1rem;
 }
 .wrapper .main {
   background-image: url("images/backgrounds/svg.svg");
