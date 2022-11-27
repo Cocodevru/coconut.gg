@@ -87,14 +87,15 @@ h2 {
   color: pink;
 }
 .wrapper .main {
-  background-image: url("images/backgrounds/svg2.svg");
+  background-image: url("images/backgrounds/svg.svg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: pink;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100% + 50px);
-  border-bottom: solid 50px #151515;
+  flex-direction: column;
+  height: 100%;
 }
 .wrapper .main__items {
   display: flex;
@@ -125,6 +126,7 @@ h2 {
   margin: 1rem 0;
 }
 .wrapper .main__container p {
+  color: white;
   line-height: 1.5;
 }
 .wrapper .main__container p, .wrapper .main__container p span {
@@ -134,8 +136,8 @@ h2 {
   font-size: 1.3rem;
 }
 .wrapper .main__container p:nth-child(2) {
-  color: #989898;
   margin: 0.5rem 1rem;
+  color: rgba(255, 255, 255, 0.5019607843);
 }
 .wrapper .main__container p:nth-child(3) {
   margin: 1rem 0;
@@ -169,6 +171,7 @@ h2 {
 .wrapper .main__container a p {
   font-size: 1.25rem;
   margin: 0.25rem 0 0;
+  color: black;
 }
 .wrapper .main__container a img {
   width: 50px;
@@ -185,6 +188,7 @@ h2 {
 }
 .wrapper .about__items p {
   text-align: justify;
+  font-size: 1.3rem;
   margin: 0 1rem;
 }
 .wrapper .skills {
@@ -194,6 +198,9 @@ h2 {
   flex-direction: column;
   margin: 1rem 0 3rem;
 }
+.wrapper .skills__items {
+  max-width: 1200px;
+}
 .wrapper .skills__items, .wrapper .skills__items div {
   display: flex;
   align-items: center;
@@ -202,9 +209,38 @@ h2 {
 }
 .wrapper .skills__items div {
   flex-direction: column;
+  width: 25%;
+}
+@media screen and (max-width: 768px) {
+  .wrapper .skills__items div {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 350px) {
+  .wrapper .skills__items div {
+    width: 100%;
+  }
+}
+.wrapper .skills__items span {
+  margin: 0.5rem 1rem;
+  text-align: center;
+  color: rgba(102, 102, 102, 0.5019607843);
+}
+.wrapper .role {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper .role__items {
+  max-width: 1200px;
+}
+.wrapper .role__items p {
+  text-align: justify;
+  font-size: 1.3rem;
+  margin: 1rem;
 }
 .wrapper .contacts {
-  background-image: url("images/backgrounds/svg.svg");
+  background-image: url("images/backgrounds/svg3.svg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -229,6 +265,12 @@ h2 {
 @media screen and (max-width: 375px) {
   .wrapper .contacts__items {
     flex-direction: column;
+    padding: 0 1rem;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .wrapper .contacts__items {
+    margin-bottom: 3rem;
   }
 }
 .wrapper .contacts__container {
@@ -236,10 +278,10 @@ h2 {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  width: 200px;
 }
 .wrapper .contacts__container:first-child {
   flex-direction: column;
+  margin: 0 1rem;
 }
 .wrapper .contacts__container:first-child p {
   background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
@@ -265,6 +307,11 @@ h2 {
 }
 .wrapper .contacts__icon:hover {
   transform: scale(1.1);
+}
+@media screen and (min-width: 1920px) {
+  .wrapper .contacts {
+    height: 30%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
